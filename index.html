@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to French Translator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 70%;
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            resize: vertical;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #eef6ff;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+        }
+        .note {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>English → French Translator</h1>
+        <p class="note">Enter an English sentence and get its French translation.</p>
+
+        <form method="POST">
+            <textarea name="english_text" rows="6" placeholder="Type English text here...">{{ english_text }}</textarea>
+            <br>
+            <button type="submit">Translate</button>
+        </form>
+
+        {% if french_text %}
+        <div class="result">
+            <h2>French Translation</h2>
+            <p>{{ french_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
