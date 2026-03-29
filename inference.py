@@ -5,9 +5,8 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Load saved models
-encoder_model = tf.keras.models.load_model("artifacts/encoder_model.keras")
-decoder_model = tf.keras.models.load_model("artifacts/decoder_model.keras")
-
+encoder_model = tf.keras.models.load_model("artifacts/encoder_model.keras", compile=False)
+decoder_model = tf.keras.models.load_model("artifacts/decoder_model.keras", compile=False)
 # Load tokenizers
 with open("artifacts/en_tokenizer.pkl", "rb") as f:
     en_tokenizer = pickle.load(f)
